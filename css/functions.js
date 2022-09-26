@@ -58,7 +58,20 @@ function timeElapse(date){
 	var result = "第<span class=\"digit\">" + days + "</span> 天<span class=\"digit\">" + hours + "</span> 小时<span class=\"digit\">" + minutes + "</span> 分钟<span class=\"digit\">" + seconds + "</span> 秒"; 
 	$("#clock").html(result);
 }
-document.addEventListener("WechatJSBridgeReady",function(){
-	document.getElementById('bgSound').play();
-	isPaused();
-},false)
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('bgSound');
+            audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+    audioAutoPlay();
+});
+document.addEventListener('touchstart', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('audio');
+            audio.play();
+    }
+    audioAutoPlay();
+});
