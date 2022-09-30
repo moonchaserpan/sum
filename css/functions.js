@@ -75,3 +75,4 @@ document.addEventListener('touchstart', function () {
     }
     audioAutoPlay();
 });
+// https://www.yisu.com/zixun/665080.html
